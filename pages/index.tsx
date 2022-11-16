@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import React, { useState } from "react";
 import Hero from "../components/Hero";
 import About from "../components/About";
+import WorkExperience from "../components/WorkExperience";
 
 function Home() {
   return (
@@ -18,6 +19,9 @@ function Home() {
       </section>
       <section id="about" className="snap-center">
         <About />
+      </section>
+      <section id="experience" className="snap-center">
+        <WorkExperience />
       </section>
     </div>
   );
