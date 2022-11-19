@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import WorkExperience from "../components/WorkExperience";
+import Skills from "../components/Skills";
 
 function Home() {
   return (
@@ -22,6 +23,9 @@ function Home() {
       </section>
       <section id="experience" className="snap-center">
         <WorkExperience />
+      </section>
+      <section id="hero" className="snap-start">
+        <Skills />
       </section>
     </div>
   );
