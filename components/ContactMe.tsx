@@ -12,7 +12,11 @@ type Inputs = {
 type Props = {};
 
 function ContactMe({}: Props) {
-  const { register, handleSubmit } = useForm<Inputs>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = formData => {
     window.location.href = `mailto:prahladtimalsina7@gmail?subject=${formData.subject}&body=Hi, my name is ${formData.name}.${formData.message} (${formData.email})`;
   };
@@ -41,13 +45,40 @@ function ContactMe({}: Props) {
             <p className="text-2xl">123 Developer Lane</p>
           </div>
         </div>
-        <form className="flex flex-col space-y-2 w-fit mx-auto">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col space-y-2 w-fit mx-auto"
+        >
           <div className="flex space-x-2">
-            <input placeholder="Name" className="contactInput" type="text" />
-            <input placeholder="Email" className="contactInput" type="Email" />
+            <input
+              {...register("name", { required: true })}
+              placeholder="Name"
+              className="contactInput  "
+              type="text"
+            />
+            {errors.name && " Name is required"}
+
+            <input
+              {...register("email", { required: true })}
+              placeholder="Email"
+              className="contactInput"
+              type="Email"
+            />
+            {errors.email && " email is required"}
           </div>
-          <input placeholder="Subject" className="contactInput" type="text" />
-          <textarea placeholder="Message" className="contactInput" />
+          <input
+            {...register("subject", { required: true })}
+            placeholder="Subject"
+            className="contactInput"
+            type="text"
+          />
+          {errors.subject && " subject is required"}
+          <textarea
+            {...register("message", { required: true })}
+            placeholder="Message"
+            className="contactInput"
+          />
+          {errors.message && " message is required"}
           <button
             type="submit"
             className="bg-[#F7AB0A] py-5 px-18 rounded-md text-black font-bold text-lg"
