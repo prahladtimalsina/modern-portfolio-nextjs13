@@ -1,6 +1,7 @@
 import React from 'react'
 import {motion} from "framer-motion";
-type Props = {}
+import Image from "next/image";
+type Props = {};
 
 function ExperienceCard({}: Props) {
   return (
@@ -20,7 +21,40 @@ function ExperienceCard({}: Props) {
         <p className="font-bold text-2xl mt-1">PAPAFAM</p>
 
         <div className="flex space-x-2 my-2">
-          <img
+          <Image
+            className="rounded-full"
+            src="/images/prahlad.jpg"
+            alt="Picture of the Project"
+            width={50}
+            height={50}
+            objectFit="cover"
+          />
+          <Image
+            className="rounded-full"
+            src="/images/prahlad.jpg"
+            alt="Picture of the Project"
+            width={50}
+            height={50}
+            objectFit="cover"
+          />
+          <Image
+            className="rounded-full"
+            src="/images/prahlad.jpg"
+            alt="Picture of the Project"
+            width={50}
+            height={50}
+            objectFit="cover"
+          />
+          <Image
+            className="rounded-full"
+            src="/images/prahlad.jpg"
+            alt="Picture of the Project"
+            width={50}
+            height={50}
+            objectFit="cover"
+          />
+
+          {/* <img
             className="w-10 h-10 rounded-full"
             src="/images/prahlad.jpg"
             alt=""
@@ -34,7 +68,7 @@ function ExperienceCard({}: Props) {
             className="w-10 h-10 rounded-full"
             src="/images/prahlad.jpg"
             alt=""
-          />
+          /> */}
         </div>
         <p className="uppercase py-5 text-gray-300">Started date</p>
         <ul className="list-disc space-y-4 ml-5 text-lg">
